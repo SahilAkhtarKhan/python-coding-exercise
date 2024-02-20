@@ -147,25 +147,24 @@ print(count("ter-min-a-tor"))
 
 # Write a function named is_anagram that takes two strings as its parameters.
 # Your function should return True if the strings are anagrams, and False otherwise.
-def is_anagram(str_01, str_02):
-    count_01 = {}
-    count_02 = {}
-    for i in range(len(str_01)):
-        count_01[i] = str_01[i]
 
-    for j in range(len(str_02)):
-        count_02[j] = str_02[j]
+def check_anagram(str_01, str_02):
+    dict_01 = {}
+    dict_02 = {}
+    for i in str_01:    # for dict 01
+        if i in dict_01:
+            dict_01[i] += 1
+        else:
+           dict_01[i] = 1
 
-    
-    print(count_01, count_02)
-is_anagram("typhoon", "opython")
-# print(is_anagram("typhoon", "opython"))
+    for j in str_02:
+        if j in dict_02:
+            dict_02[j] += 1
+        else:
+            dict_02[j] = 1
+    print(dict_01 == dict_02)
 
-
-
-
-
-
+check_anagram("secure", "rescue")
 
 
 
